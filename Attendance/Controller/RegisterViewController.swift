@@ -32,7 +32,7 @@ class RegisterViewController: UIViewController {
     @IBAction func RegisterButtonPressed(_ sender: Any) {
         
         
-        SVProgressHUD.dismiss()
+        SVProgressHUD.show()
         
         // Set up new user
         FIRAuth.auth()?.createUser(withEmail: EmailTextField.text!, password: PasswordTextField.text!, completion: { (user, error) in

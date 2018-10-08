@@ -294,6 +294,9 @@
                                         <state key="normal" title="LogIn">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="LogInButtonPressed:" destination="EgN-UT-lx9" eventType="touchUpInside" id="zv6-ed-dO7"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zek-Wi-D2V">
                                         <rect key="frame" x="16" y="88" width="343" height="30"/>
@@ -331,7 +334,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="mXa-A9-5vq"/>
                     <connections>
-                        <segue destination="eQE-CN-jUp" kind="show" identifier="login" id="xPH-rB-zdq"/>
+                        <outlet property="EmailTextField" destination="Zek-Wi-D2V" id="Q7F-cS-ehB"/>
+                        <outlet property="PasswordTextField" destination="K4O-y1-8eV" id="Zsa-s4-yy8"/>
+                        <segue destination="eQE-CN-jUp" kind="show" identifier="goToChecker" id="xPH-rB-zdq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pu9-fV-DNg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -381,6 +386,6 @@
         <image name="clock-3179167_1920" width="1920" height="1280"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="l9D-6o-4iT"/>
+        <segue reference="xPH-rB-zdq"/>
     </inferredMetricsTieBreakers>
 </document>

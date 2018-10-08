@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		7F871729216BA409005F647F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F871728216BA409005F647F /* AppDelegate.swift */; };
-		7F87172B216BA409005F647F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87172A216BA409005F647F /* ViewController.swift */; };
 		7F87172E216BA409005F647F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F87172C216BA409005F647F /* Main.storyboard */; };
 		7F871730216BA42D005F647F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F87172F216BA42D005F647F /* Assets.xcassets */; };
 		7F871733216BA42D005F647F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F871731216BA42D005F647F /* LaunchScreen.storyboard */; };
 		7F87173B216BF0C5005F647F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7F87173A216BF0C5005F647F /* GoogleService-Info.plist */; };
+		7F871741216BF4F7005F647F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F871740216BF4F7005F647F /* WelcomeViewController.swift */; };
+		7F871743216BF543005F647F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F871742216BF543005F647F /* LogInViewController.swift */; };
+		7F871745216BF5AF005F647F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F871744216BF5AF005F647F /* RegisterViewController.swift */; };
 		91A6639536FED781BEA401BC /* Pods_Attendance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92AE2AB032B57CAF6B171348 /* Pods_Attendance.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,12 +23,14 @@
 		3BF626CDB80F27085598201E /* Pods-Attendance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Attendance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Attendance/Pods-Attendance.debug.xcconfig"; sourceTree = "<group>"; };
 		7F871725216BA409005F647F /* Attendance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Attendance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F871728216BA409005F647F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7F87172A216BA409005F647F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7F87172D216BA409005F647F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F87172F216BA42D005F647F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F871732216BA42D005F647F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F871734216BA42D005F647F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F87173A216BF0C5005F647F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7F871740216BF4F7005F647F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		7F871742216BF543005F647F /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		7F871744216BF5AF005F647F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		92AE2AB032B57CAF6B171348 /* Pods_Attendance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Attendance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -72,15 +76,49 @@
 		7F871727216BA409005F647F /* Attendance */ = {
 			isa = PBXGroup;
 			children = (
-				7F871728216BA409005F647F /* AppDelegate.swift */,
-				7F87172A216BA409005F647F /* ViewController.swift */,
-				7F87172C216BA409005F647F /* Main.storyboard */,
+				7F87173E216BF3A9005F647F /* Model */,
+				7F87173D216BF375005F647F /* Controller */,
+				7F87173C216BF358005F647F /* View */,
 				7F87172F216BA42D005F647F /* Assets.xcassets */,
+				7F87173F216BF3E6005F647F /* Supporting Files  */,
+			);
+			path = Attendance;
+			sourceTree = "<group>";
+		};
+		7F87173C216BF358005F647F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7F87172C216BA409005F647F /* Main.storyboard */,
 				7F871731216BA42D005F647F /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7F87173D216BF375005F647F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7F871728216BA409005F647F /* AppDelegate.swift */,
+				7F871740216BF4F7005F647F /* WelcomeViewController.swift */,
+				7F871742216BF543005F647F /* LogInViewController.swift */,
+				7F871744216BF5AF005F647F /* RegisterViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7F87173E216BF3A9005F647F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7F87173F216BF3E6005F647F /* Supporting Files  */ = {
+			isa = PBXGroup;
+			children = (
 				7F871734216BA42D005F647F /* Info.plist */,
 				7F87173A216BF0C5005F647F /* GoogleService-Info.plist */,
 			);
-			path = Attendance;
+			path = "Supporting Files ";
 			sourceTree = "<group>";
 		};
 		E51D42A1188513E38644E879 /* Frameworks */ = {
@@ -210,7 +248,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F87172B216BA409005F647F /* ViewController.swift in Sources */,
+				7F871743216BF543005F647F /* LogInViewController.swift in Sources */,
+				7F871745216BF5AF005F647F /* RegisterViewController.swift in Sources */,
+				7F871741216BF4F7005F647F /* WelcomeViewController.swift in Sources */,
 				7F871729216BA409005F647F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

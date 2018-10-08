@@ -7,9 +7,17 @@
 //
 
 import UIKit
+import Firebase
+import SVProgressHUD
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var EmailTextField: UITextField!
+    
+    @IBOutlet weak var PasswordTextField: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +29,25 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func RegisterButtonPressed(_ sender: Any) {
+        
+        
+        SVProgressHUD.dismiss()
+        
+        // Set up new user
+        FIRAuth.auth()?.createUser(withEmail: EmailTextField.text!, password: PasswordTextField.text!, completion: { (user, error) in
+            if error != nil{
+                print(error!)
+            }
+            else {
+                SVProgressHUD.dismiss()
+                self.performSegue(withIdentifier: "goToChecker", sender: self)
+            }
+        })
+        
+        
+        
     }
-    */
+    
 
 }

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>773206088205-p5hccrsd1an25ji0bcprq7pddc44jovg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.773206088205-p5hccrsd1an25ji0bcprq7pddc44jovg</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCxnR_QLj4cGELxzVydzPrRrUtV9urKu44</string>
+	<key>GCM_SENDER_ID</key>
+	<string>773206088205</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.olajuwon.Attendance</string>
+	<key>PROJECT_ID</key>
+	<string>attendance-10eb6</string>
+	<key>STORAGE_BUCKET</key>
+	<string>attendance-10eb6.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:773206088205:ios:338ec9db1b09b7cc</string>
+	<key>DATABASE_URL</key>
+	<string>https://attendance-10eb6.firebaseio.com</string>
+</dict>
+</plist>

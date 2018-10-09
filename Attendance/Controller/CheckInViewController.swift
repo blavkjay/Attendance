@@ -12,6 +12,8 @@ import SVProgressHUD
 
 class CheckInViewController: UIViewController {
     
+  
+    
     enum CheckInError: Error{
         
         case Weekend
@@ -40,20 +42,46 @@ class CheckInViewController: UIViewController {
     
     func checkError() throws{
         
+        
   
         
     }
+    
+    
+    // check existing dates
+    
+//    func existingDate(){
+//        let calendar = NSCalendar.current
+//        let components = calendar.dateComponents([.day, .month, .year, .hour], from: NSDate() as Date)
+//        let day =  " \(String(describing: components.day ?? 0))"
+//        let month =  " \(String(describing: components.month ?? 0))"
+//        let Year = " \(String(describing: components.year ?? 0))"
+//        let Today = day+":"+month+":"+Year
+//        let ref = FIRDatabase.database().reference()
+//        ref.child("CheckInDate").observeSingleEvent(of: .value, with: {
+//            (snapshot) in
+//
+//        if snapshot.hasChild(Today){
+//          print("Date exist already")
+//        }else{
+//            print("Date doesnt Exist ")
+//        }
+//    }
+//    }
+    
+    
+    
     // Save Time
     
     func saveTime(){
+        
         let calendar = NSCalendar.current
         let components = calendar.dateComponents([.day, .month, .year, .hour], from: NSDate() as Date)
         //  let hrs = " \(String(describing: components.hour))"
         // let mins=   "\(String(describing: components.minute))"
-        let day =  " \(String(describing: components.day))"
-        let month =  " \(String(describing: components.month))"
-        let Year = " \(String(describing: components.year))"
-        
+        let day =  " \(String(describing: components.day ?? 0))"
+        let month =  " \(String(describing: components.month ?? 0))"
+        let Year = " \(String(describing: components.year ?? 0))"
         let Today = day+":"+month+":"+Year
        
         let checkInTime = FIRDatabase.database().reference().child("CheckInDate")

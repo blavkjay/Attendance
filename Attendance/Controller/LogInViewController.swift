@@ -34,7 +34,7 @@ class LogInViewController: UIViewController {
         
         FIRAuth.auth()?.signIn(withEmail: EmailTextField.text!, password: PasswordTextField.text!, completion: { (user, error) in
             if error != nil{
-                print(error!)
+                Alert.showAlert(title: "Message", message: "User Doesnt Exist", vc: self)
                 
             }else{
                 SVProgressHUD.dismiss()

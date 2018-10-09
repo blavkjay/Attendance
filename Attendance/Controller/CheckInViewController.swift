@@ -12,15 +12,6 @@ import SVProgressHUD
 
 class CheckInViewController: UIViewController {
     
-  
-    
-    enum CheckInError: Error{
-        
-        case Weekend
-        case LoggedAlready
-        
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,47 +26,32 @@ class CheckInViewController: UIViewController {
     //CheckIn User
     @IBAction func checkInPressed(_ sender: Any) {
         
-        saveTime()
+        existingDate()
     }
-    
-    //Check for Errors
-    
-    func checkError() throws{
-        
-        
-  
-        
-    }
-    
     
     // check existing dates
     
-//    func existingDate(){
-//        let calendar = NSCalendar.current
-//        let components = calendar.dateComponents([.day, .month, .year, .hour], from: NSDate() as Date)
-//        let day =  " \(String(describing: components.day ?? 0))"
-//        let month =  " \(String(describing: components.month ?? 0))"
-//        let Year = " \(String(describing: components.year ?? 0))"
-//        let Today = day+":"+month+":"+Year
-//        let ref = FIRDatabase.database().reference()
-//        ref.child("CheckInDate").observeSingleEvent(of: .value, with: {
-//            (snapshot) in
-//
-//        if snapshot.hasChild(Today){
-//          print("Date exist already")
-//        }else{
-//            print("Date doesnt Exist ")
-//        }
-//    }
-//    }
-    
-    
-    
+    func existingDate(){
+        
+        let ref = FIRDatabase.database().reference()
+        ref.observeSingleEvent(of: .value, with: { snapshot in
+            if (!snapshot.exists()) {
+                self.saveTime()
+            }
+            else {
+              Alert.showAlert(title: "Message", message: "Checked In Already for the day", vc: self)
+            }
+        })
+        
+    }
+        
+
     // Save Time
     
     func saveTime(){
         
         let calendar = NSCalendar.current
+        let date = NSDate()
         let components = calendar.dateComponents([.day, .month, .year, .hour], from: NSDate() as Date)
         //  let hrs = " \(String(describing: components.hour))"
         // let mins=   "\(String(describing: components.minute))"
@@ -83,7 +59,13 @@ class CheckInViewController: UIViewController {
         let month =  " \(String(describing: components.month ?? 0))"
         let Year = " \(String(describing: components.year ?? 0))"
         let Today = day+":"+month+":"+Year
-       
+        
+        let isWeekEnd = Calendar.current.isDateInWeekend(date as Date)
+        if isWeekEnd{
+            
+            Alert.showAlert(title: "Message", message: "No work today! Enjoy the Weekend", vc: self)
+            
+        }else{
         let checkInTime = FIRDatabase.database().reference().child("CheckInDate")
         let userDetails = ["Employee": FIRAuth.auth()?.currentUser?.email, "Date": Today]
         
@@ -93,15 +75,15 @@ class CheckInViewController: UIViewController {
             if error != nil{
                 print(error!)
             }else {
-                print("Checkin Saved ")
+               Alert.showAlert(title: "Message", message: "Welcome Back to work! Checked In", vc: self)
             }
             
         }
         
-        
+        }
     }
     
     
-    
-    
 }
+    
+

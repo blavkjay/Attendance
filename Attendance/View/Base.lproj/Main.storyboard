@@ -246,7 +246,13 @@
                             <outlet property="delegate" destination="8mM-j1-tnO" id="6rr-GF-NXA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="2Av-rH-zmk"/>
+                    <navigationItem key="navigationItem" id="2Av-rH-zmk">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="Krz-1F-DFx">
+                            <connections>
+                                <action selector="logOutPressed:" destination="8mM-j1-tnO" id="scl-le-mmi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Uv-vl-Eiv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -270,7 +276,7 @@
             </objects>
             <point key="canvasLocation" x="2718" y="213"/>
         </scene>
-        <!--Log In View Controller-->
+        <!--Login-->
         <scene sceneID="V6Z-sC-DX0">
             <objects>
                 <viewController id="EgN-UT-lx9" customClass="LogInViewController" customModule="Attendance" customModuleProvider="target" sceneMemberID="viewController">
@@ -335,7 +341,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pD5-eY-AOF"/>
                     </view>
-                    <navigationItem key="navigationItem" id="mXa-A9-5vq"/>
+                    <navigationItem key="navigationItem" title="Login" id="mXa-A9-5vq"/>
                     <connections>
                         <outlet property="EmailTextField" destination="Zek-Wi-D2V" id="Q7F-cS-ehB"/>
                         <outlet property="PasswordTextField" destination="K4O-y1-8eV" id="Zsa-s4-yy8"/>
@@ -391,6 +397,6 @@
         <image name="clock-3179167_1920" width="1920" height="1280"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xPH-rB-zdq"/>
+        <segue reference="l9D-6o-4iT"/>
     </inferredMetricsTieBreakers>
 </document>

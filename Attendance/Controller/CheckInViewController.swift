@@ -32,16 +32,40 @@ class CheckInViewController: UIViewController {
     // check existing dates
     
     func existingDate(){
+        let calendar = NSCalendar.current
+        let date = NSDate()
+        let components = calendar.dateComponents([.day, .month, .year, .hour], from: NSDate() as Date)
+        //  let hrs = " \(String(describing: components.hour))"
+        // let mins=   "\(String(describing: components.minute))"
+        let day =  " \(String(describing: components.day ?? 0))"
+        let month =  " \(String(describing: components.month ?? 0))"
+        let Year = " \(String(describing: components.year ?? 0))"
+        let Today = day+":"+month+":"+Year
         
-        let ref = FIRDatabase.database().reference()
-        ref.observeSingleEvent(of: .value, with: { snapshot in
-            if (!snapshot.exists()) {
-                self.saveTime()
-            }
-            else {
-              Alert.showAlert(title: "Message", message: "Checked In Already for the day", vc: self)
-            }
+      //  let ref = FIRDatabase.database().reference()
+        
+        FIRDatabase
+            .database().reference()
+            .child("CheckIn")
+            .queryOrdered(byChild: "Date")
+            .queryEqual(toValue: "\(Today)")
+            .observe(.childAdded, with: { (snapshot) in
+                
+                if(!snapshot.exists()){
+                    self.saveTime()
+                }else{
+                    
+                    Alert.showAlert(title: "Message", message: "Checked In Already for the day", vc: self)
+                }
         })
+//        ref.observeSingleEvent(of: .value, with: { snapshot in
+//            if (!snapshot.exists()) {
+//                self.saveTime()
+//            }
+//            else {
+//              Alert.showAlert(title: "Message", message: "Checked In Already for the day", vc: self)
+//            }
+//        })
         
     }
         

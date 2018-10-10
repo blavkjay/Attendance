@@ -37,7 +37,9 @@ class RegisterViewController: UIViewController {
         // Set up new user
         FIRAuth.auth()?.createUser(withEmail: EmailTextField.text!, password: PasswordTextField.text!, completion: { (user, error) in
             if error != nil{
-                print(error!)
+                SVProgressHUD.dismiss()
+                 Alert.showAlert(title: "Message", message: "Try again later", vc: self)
+                
             }
             else {
                 SVProgressHUD.dismiss()

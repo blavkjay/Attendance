@@ -40,10 +40,10 @@ class RecordsTableViewController: UITableViewController {
         let DateDB = FIRDatabase.database().reference().child("CheckInDate")
         DateDB.observe(.childAdded) { (snapshot) in
             let snapshotvalue = snapshot.value as!  Dictionary<String,String>
-            let date = snapshotvalue["Date"]
+            let date = snapshotvalue["Date"]!
             
             let Details = Records()
-            Details.date = date!
+            Details.date = date
             self.RecordsArray.append(Details)
            self.tableView.reloadData()
             

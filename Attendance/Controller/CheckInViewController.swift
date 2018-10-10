@@ -25,7 +25,7 @@ class CheckInViewController: UIViewController {
     
     //CheckIn User
     @IBAction func checkInPressed(_ sender: Any) {
-        
+        SVProgressHUD.show()
         //saveTime()
        existingDate()
     }
@@ -43,18 +43,21 @@ class CheckInViewController: UIViewController {
 
         let DateDB = FIRDatabase.database().reference().child("CheckInDate")
         DateDB.observe(.childAdded) { (snapshot) in
-            let snapshotvalue = snapshot.value as!  Dictionary<String,String>
+            if let snapshotvalue = snapshot.value as?  NSDictionary{
             
-            let date = snapshotvalue["Date"]!
-            let dbdate = String(date)
+            let date = snapshotvalue["Date"] as? String
+            let dbdate = date
             
             if dbdate == Today{
+                SVProgressHUD.dismiss()
                 Alert.showAlert(title: "Message", message: "Checked In Already for the day", vc: self)
             }else{
+                SVProgressHUD.dismiss()
                 self.saveTime()
             }
         }
             }
+    }
     
 
     // Save Time
@@ -85,6 +88,7 @@ class CheckInViewController: UIViewController {
             if error != nil{
                 print(error!)
             }else {
+                SVProgressHUD.dismiss()
                Alert.showAlert(title: "Message", message: "Welcome Back to work! Checked In", vc: self)
             }
             

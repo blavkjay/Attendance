@@ -27,22 +27,9 @@ class CheckInViewController: UIViewController {
     @IBAction func checkInPressed(_ sender: Any) {
         SVProgressHUD.show()
         saveTime()
-       //existingDate()
     }
     
-    // check existing dates
-    
-//    func existingDate(){
-//        let calendar = NSCalendar.current
-//       // let date = NSDate()
-//        let components = calendar.dateComponents([.day, .month, .year, .hour], from: NSDate() as Date)
-//        let day =  " \(String(describing: components.day ?? 0))"
-//        let month =  " \(String(describing: components.month ?? 0))"
-//        let Year = " \(String(describing: components.year ?? 0))"
-//      //  let Today = day+":"+month+":"+Year
-//
-//       
-//    }
+
     
 
     // Save Time

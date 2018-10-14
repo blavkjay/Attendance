@@ -246,13 +246,7 @@
                             <outlet property="delegate" destination="8mM-j1-tnO" id="6rr-GF-NXA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="2Av-rH-zmk">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="Krz-1F-DFx">
-                            <connections>
-                                <action selector="logOutPressed:" destination="8mM-j1-tnO" id="scl-le-mmi"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="2Av-rH-zmk"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Uv-vl-Eiv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

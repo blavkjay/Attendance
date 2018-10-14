@@ -52,16 +52,5 @@ class RecordsTableViewController: UITableViewController {
    
     }
     
-//    @IBAction func logOutPressed(_ sender: Any) {
-//    
-//        do{
-//            
-//            try FIRAuth.auth()?.signOut()
-//            navigationController?.popToRootViewController(animated: true)
-//        }catch{
-//           print("Error occured while logging out")
-//        }
-//    
-//    }
     
 }

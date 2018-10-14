@@ -39,28 +39,29 @@ class RecordsTableViewController: UITableViewController {
         
         let DateDB = FIRDatabase.database().reference().child("CheckInDate")
         DateDB.observe(.childAdded) { (snapshot) in
-            let snapshotvalue = snapshot.value as!  Dictionary<String,String>
-            let date = snapshotvalue["Date"]!
+            if let snapshotvalue = snapshot.value as?  NSDictionary{
+          
+                let date = snapshotvalue["Date"] as! String
             
             let Details = Records()
             Details.date = date
             self.RecordsArray.append(Details)
            self.tableView.reloadData()
-            
+            }
         }
    
     }
     
-    @IBAction func logOutPressed(_ sender: Any) {
-    
-        do{
-            
-            try FIRAuth.auth()?.signOut()
-            navigationController?.popToRootViewController(animated: true)
-        }catch{
-           print("Error occured while logging out")
-        }
-    
-    }
+//    @IBAction func logOutPressed(_ sender: Any) {
+//    
+//        do{
+//            
+//            try FIRAuth.auth()?.signOut()
+//            navigationController?.popToRootViewController(animated: true)
+//        }catch{
+//           print("Error occured while logging out")
+//        }
+//    
+//    }
     
 }
